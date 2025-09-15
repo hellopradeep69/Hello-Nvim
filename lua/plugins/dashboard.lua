@@ -35,7 +35,7 @@ return {
           { action = function() snacks.picker.grep() end,        desc = " Find Text",       icon = " ", key = "g" },
           { action = function() snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end,       desc = " Config",          icon = " ", key = "c" },
           -- { action = 'lua require("persistence").load()',              desc = " Restore Session", icon = " ", key = "s" },
-          { action = "LazyExtras",                                     desc = " Lazy Extras",     icon = " ", key = "m" },
+          -- { action = "LazyExtras",                                     desc = " Lazy Extras",     icon = " ", key = "m" },
           { action = "Lazy",                                           desc = " Lazy",            icon = " ", key = "l" },
           { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = " ", key = "q" },
         },
@@ -47,7 +47,7 @@ return {
         -- end,
         --
         -- footer = {
-        --   "hellopradeep!",
+        --   " Hellopradeep 💌 ",
         -- },
       },
     }
