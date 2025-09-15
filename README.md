@@ -3,8 +3,8 @@
 
 ### introduction
 - this is neovim config namely as Hello-Nvim
-- this config is made for personal only . but still , feel free to use 
-- and as for keymaps Hello-Nvim use which key so you can figure it out easly !
+- this config is made for personal use only . but still , feel free to use 
+- and as for keymaps Hello-Nvim use which key so you can figure it out easily !
 - also it uses [Lazy.vim](https://lazy.folke.io/) plugin manager which is beautiful and works well 
 - [folke , oh folke , oh my boy folke](https://youtu.be/ZWWxwwUsPNw?t=505). you get it right 
 ----------
