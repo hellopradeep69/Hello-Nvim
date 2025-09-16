@@ -18,6 +18,8 @@ return {
       icons = {
         -- Configure the base icons on the bufferline.
         -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
+        -- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
+        preset = 'default',
         buffer_index = false,
         buffer_number = false,
         button = "",
@@ -27,7 +29,8 @@ return {
           deleted = { enabled = true, icon = "-" },
         },
         separator = { left = "▎", right = "" },
-        modified = { button = "●" },
+        -- modified = { button = "●" },
+        modified = { button = "-" },
         pinned = { button = "", filename = true },
       },
       highlight_visible = true,

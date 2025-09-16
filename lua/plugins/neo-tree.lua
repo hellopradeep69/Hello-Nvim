@@ -37,10 +37,13 @@ return {
       end,
       desc = "Git Explorer",
     },
+        -- {
+    -- "<leader>bb", <cmd>Neotree buffers float toggle<CR>, desc = "buffers neo-tree"
+        -- },
     {
-      "<leader>be",
+      "<leader>pb",
       function()
-        require("neo-tree.command").execute({ source = "buffers", toggle = true })
+        require("neo-tree.command").execute({ source = "buffers", toggle = true , position = "float"})
       end,
       desc = "Buffer Explorer",
     },

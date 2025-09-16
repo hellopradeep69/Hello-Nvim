@@ -6,6 +6,17 @@ return {
     version = "1.*",
 
     opts = {
+
+        -- disable in Neo-tree and other special buffers
+        enabled = function()
+        local disabled_filetypes = { "neo-tree", "TelescopePrompt", "help" }
+        local ft = vim.bo.filetype
+        if vim.tbl_contains(disabled_filetypes, ft) then
+            return false
+        end
+        return true
+        end,
+
       keymap = {
         preset = "enter",
         ["<C-y>"] = { "select_and_accept" },
@@ -15,12 +26,15 @@ return {
         use_nvim_cmp_as_default = false,
         nerd_font_variant = "mono",
       },
+      cmdline = {
+      enabled = false,
+      menu = { auto_show = false}, },
 
       signature = { enabled = true },
 
       completion = {
         list = { selection = { preselect = true, auto_insert = false } },
-        trigger = { show_on_insert = true },
+        trigger = { show_on_insert = false},
         accept = { auto_brackets = { enabled = true } },
         menu = {
         scrollbar = false,

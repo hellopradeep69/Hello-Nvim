@@ -3,7 +3,7 @@ return {
   "echasnovski/mini.pairs",
   event = "VeryLazy",
   opts = {
-    modes = { insert = true, command = true, terminal = false },
+    modes = { insert = true, command = false, terminal = false },
     mappings = {
       ["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]." },
       ["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]." },
