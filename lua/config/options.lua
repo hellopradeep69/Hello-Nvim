@@ -9,6 +9,7 @@ vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.ruler = true -- Show the cursor position all the time
 vim.opt.showcmd = true -- Show (partial) command in the last line of the screen
 vim.opt.cursorline = true -- Highlight the current line
+-- vim.opt.guicursor = ""
 vim.opt.termguicolors = true -- Enable true color support
 vim.opt.mouse = "" -- Disable mouse support
 vim.opt.colorcolumn = "85"

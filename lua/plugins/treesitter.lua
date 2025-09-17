@@ -1,42 +1,42 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      local config = require("nvim-treesitter.configs")
-      config.setup({
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-        ensure_installed = {
-          "bash",
-          "c",
-          "diff",
-          "html",
-          "javascript",
-          "java",
-          "jsdoc",
-          "json",
-          "jsonc",
-          "lua",
-          "luadoc",
-          "luap",
-          "markdown",
-          "markdown_inline",
-          "printf",
-          "python",
-          "query",
-          "regex",
-          "toml",
-          "tsx",
-          "typescript",
-          "vim",
-          "vimdoc",
-          "xml",
-          "yaml",
-        },
-      })
-    end
-  }
+	{
+		"nvim-treesitter/nvim-treesitter",
+		-- branch = "main",
+		build = ":TSUpdate",
+		config = function()
+			local config = require("nvim-treesitter.configs")
+			config.setup({
+				auto_install = true,
+				highlight = { enable = true },
+				indent = { enable = true },
+				ensure_installed = {
+					"bash",
+					"c",
+					"diff",
+					"html",
+					"javascript",
+					"java",
+					"jsdoc",
+					"json",
+					"jsonc",
+					"lua",
+					"luadoc",
+					"luap",
+					"markdown",
+					"markdown_inline",
+					"printf",
+					"python",
+					"query",
+					"regex",
+					"toml",
+					"tsx",
+					"typescript",
+					"vim",
+					"vimdoc",
+					"xml",
+					"yaml",
+				},
+			})
+		end,
+	},
 }
-

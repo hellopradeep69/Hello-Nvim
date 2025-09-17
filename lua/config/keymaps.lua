@@ -178,7 +178,7 @@ map("v", "K", ":m '<-2<CR>gv=gv", opts)
 map("n", "<leader>qh", ":nohlsearch<CR>", {desc = "clear search highlight"})
 
 -- Normal mode: <leader>sr opens :%s/
-vim.keymap.set("n", "<leader>r", ":%s/", { desc = "Search and Replace" })
+vim.keymap.set("n", "<leader>R", ":%s/", { desc = "Search and Replace" })
 
 -- vim.keymap.set("c", "jj", "<Esc>", { desc = "Abort command-line" })
 -- vim.keymap.set("n", "<leader>sr", ":%s///gc<Left><Left>", { desc = "Search and Replace (global)" })
