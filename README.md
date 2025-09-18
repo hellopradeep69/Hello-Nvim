@@ -13,27 +13,6 @@
 - ****Installation****
 - Follow the below mention steps 
 ----------
-### Before Installation
-- make sure to create a backup of your current nvim config
-```bash
-# required
-mv ~/.config/nvim{,.bak}
-
-# optional but recommended
-mv ~/.local/share/nvim{,.bak}
-mv ~/.local/state/nvim{,.bak}
-mv ~/.cache/nvim{,.bak}
-
-```
-- or remove your config if you are risky enough 
-```bash
-rm -rf ~/.config/nvim
-rm -rf ~/.local/share/nvim
-rm -rf ~/.local/state/nvim
-rm -rf ~/.cache/nvim
-
-```
-----------
 ### Steps
 
 1. Linux / macos [ if you are using mac and trying to use nvim :-)]
@@ -48,28 +27,10 @@ git clone https://github.com/hellopradeep69/Hello-Nvim.git ~/.config/nvim/
 
 - may god have mercy on you ;-)
 - just use your boring vs code .
-----------
-### After Installation
-- Remove the .git folder, so you can add it to your own repo later
-```bash
-rm -rf ~/.config/nvim/.git
-```
-- Start Neovim!
-```bash
-nvim
-```
-- and btw you can quit nvim using 
-```nvim
-:q!
-```
-----------
-### Honourable mention
-- if you want to try something powerfull try [Lazynvim](https://www.lazyvim.org/installation) .
-----------
 
 ## **THANK YOU**
 that's it ! HAVE A GREAT DAY
 ----------
 
 
-                                      with love @ hellopradeep69
+                                         with love @ hellopradeep69

@@ -1,46 +1,52 @@
 return {
-  "williamboman/mason.nvim",
-  lazy = false, -- load immediately
-  keys = {
-    { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" },
-  },
-  opts = {
-    ensure_installed = { "stylua", "shfmt" }, -- tools you want
-  },
-  config = function(_, opts)
-    local mason = require("mason")
-    local mr = require("mason-registry")
+	"williamboman/mason.nvim",
+	lazy = false, -- load immediately
+	keys = {
+		{ "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" },
+	},
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim", -- LSP bridge
+		"neovim/nvim-lspconfig",
+	},
+	opts = {
+		ensure_installed = { "stylua", "shfmt" }, -- mason tools
+		servers = { "lua_ls", "pyright", "html", "cssls", "clangd" }, -- mason-lspconfig servers
+	},
+	config = function(_, opts)
+		local mason = require("mason")
+		local mr = require("mason-registry")
+		local mlsp = require("mason-lspconfig")
+		local lspconfig = require("lspconfig")
 
-    -- Setup mason with your options
-    mason.setup(opts)
+		-- Setup mason
+		mason.setup(opts)
 
-    -- Automatically install tools in ensure_installed
-    mr.refresh(function()
-      for _, tool in ipairs(opts.ensure_installed) do
-        local p = mr.get_package(tool)
-        if not p:is_installed() then
-          p:install()
-        end
-      end
-    end)
+		-- Auto-install mason tools
+		mr.refresh(function()
+			for _, tool in ipairs(opts.ensure_installed) do
+				local p = mr.get_package(tool)
+				if not p:is_installed() then
+					p:install()
+				end
+			end
+		end)
 
-    -- Optional: trigger FileType to reload LSP/formatting if tool installed
-    mr:on("package:install:success", function()
-      vim.defer_fn(function()
-        vim.cmd("doautocmd FileType")
-      end, 100)
-    end)
-  end,
+		-- Auto-install LSP servers
+		mlsp.setup({
+			ensure_installed = opts.servers,
+			automatic_installation = true,
+		})
+
+		-- Setup each server with lspconfig
+		for _, server in ipairs(opts.servers) do
+			lspconfig[server].setup({})
+		end
+
+		-- Optional: trigger FileType after installs
+		mr:on("package:install:success", function()
+			vim.defer_fn(function()
+				vim.cmd("doautocmd FileType")
+			end, 100)
+		end)
+	end,
 }
---
--- return{
---   "williamboman/mason.nvim",
---   lazy = false,  -- or false if you want it loaded immediately
---  cmd = "Mason", -- either one
---  build = ":MasonUpdate",
---   config = function()
---     require("mason").setup()
---   end,
--- }
-
-
