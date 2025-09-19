@@ -42,6 +42,7 @@ vim.opt.scrolloff = 8 -- Minimum number of screen lines above/below the cursor
 vim.opt.sidescrolloff = 8 -- Minimum number of columns to the left/right of the cursor
 
 -- UI AND INTERFACE
+vim.opt.winborder = "rounded"
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.showmatch = true -- Briefly jump to matching bracket
 vim.opt.signcolumn = "yes" -- Always show sign column

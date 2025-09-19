@@ -54,7 +54,7 @@ return {
 				accept = { auto_brackets = { enabled = true } },
 				menu = {
 					scrollbar = false,
-					border = "rounded",
+					-- border = "rounded",
 					auto_show = true,
 					auto_show_delay_ms = 0,
 					draw = { treesitter = { "lsp" } },
@@ -64,7 +64,7 @@ return {
 						min_width = 10,
 						max_width = 80,
 						max_height = 20,
-						border = "rounded",
+						-- border = "rounded",
 					},
 					auto_show = true,
 					auto_show_delay_ms = 200,
