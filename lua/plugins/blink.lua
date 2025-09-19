@@ -1,7 +1,7 @@
 return {
 	{
 		"saghen/blink.cmp",
-		dependencies = { "rafamadriz/friendly-snippets" },
+		dependencies = { "rafamadriz/friendly-snippets", "folke/lazydev.nvim" },
 		version = "1.*",
 
 		opts = {
@@ -73,12 +73,28 @@ return {
 			},
 
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink", -- 👈 tells blink to use lazydev
+					},
+				},
 			},
 
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 
 		opts_extend = { "sources.default" },
+	},
+	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load for Lua files
+		opts = {
+			library = {
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+				{ path = "lua", words = { "vim" } },
+			},
+		},
 	},
 }
