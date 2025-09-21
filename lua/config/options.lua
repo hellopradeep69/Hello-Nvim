@@ -43,6 +43,8 @@ vim.opt.sidescrolloff = 8 -- Minimum number of columns to the left/right of the 
 
 -- UI AND INTERFACE
 vim.opt.winborder = "rounded"
+-- vim.opt.winborder = "single"
+-- vim.o.winborder="+,-,+,|,+,-,+,|"
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.showmatch = true -- Briefly jump to matching bracket
 vim.opt.signcolumn = "yes" -- Always show sign column
