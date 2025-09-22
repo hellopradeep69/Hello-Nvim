@@ -1,7 +1,8 @@
 return {
 	"stevearc/conform.nvim",
 	dependencies = { "mason.nvim" },
-	-- cmd = "ConformInfo",
+	event = { "BufWritePre" },
+	cmd = "ConformInfo",
 	keys = {
 		{
 			"<leader>cf",
@@ -27,6 +28,7 @@ return {
 			quiet = false,
 			lsp_format = "fallback", -- use LSP if no formatter available
 		},
+		format_on_save = { timeout_ms = 500 },
 		formatters_by_ft = {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
@@ -56,11 +58,11 @@ return {
 		require("conform").setup(opts)
 
 		-- optional: format on save
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*",
-			callback = function(args)
-				require("conform").format({ bufnr = args.buf, lsp_fallback = true })
-			end,
-		})
+		-- vim.api.nvim_create_autocmd("BufWritePre", {
+		-- 	pattern = "*",
+		-- 	callback = function(args)
+		-- 		require("conform").format({ bufnr = args.buf, lsp_fallback = true })
+		-- 	end,
+		-- })
 	end,
 }
