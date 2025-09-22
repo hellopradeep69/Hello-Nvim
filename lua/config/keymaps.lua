@@ -175,7 +175,7 @@ map("v", "<leader>y", '"+y', { desc = "yank" })
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
 
-map("n", "<leader>qh", ":nohlsearch<CR>", {desc = "clear search highlight"})
+map("n", "<ESC>", ":nohlsearch<CR>", {desc = "clear search highlight"})
 
 -- Normal mode: <leader>sr opens :%s/
 vim.keymap.set("n", "<leader>r", ":%s/", { desc = "Search and Replace" })

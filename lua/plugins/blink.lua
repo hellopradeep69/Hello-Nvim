@@ -1,11 +1,16 @@
 return {
 	{
 		"saghen/blink.cmp",
-		dependencies = { "rafamadriz/friendly-snippets", "folke/lazydev.nvim" },
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"folke/lazydev.nvim",
+			-- { "L3MON4D3/LuaSnip", version = "v2.*" },
+		},
 		version = "1.*",
 
 		opts = {
 
+			-- snippets = { preset = "luasnip" },
 			-- disable in Neo-tree and other special buffers
 			enabled = function()
 				local disabled_filetypes = { "neo-tree", "TelescopePrompt", "help" }
