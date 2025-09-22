@@ -35,6 +35,17 @@ return {
 			sh = { "shfmt" },
 			javascript = { "prettier" },
 			python = { "black" },
+			typescript = { "prettier" },
+			html = { "prettier" },
+			css = { "prettier" },
+			json = { "prettier" },
+			java = { "google-java-format" },
+			kotlin = { "ktlint" },
+			go = { "gofmt" },
+			rust = { "rustfmt" },
+			markdown = { "prettier" },
+			yaml = { "prettier" },
+			toml = { "taplo" },
 			-- add more here, like:
 		},
 		formatters = {
