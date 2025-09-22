@@ -1,11 +1,11 @@
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason.nvim",
 	lazy = false, -- load immediately
 	keys = {
 		{ "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" },
 	},
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim", -- LSP bridge
+		{ "mason-org/mason-lspconfig.nvim", config = function() end },
 		"neovim/nvim-lspconfig",
 	},
 	opts = {
