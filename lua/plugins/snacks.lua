@@ -23,6 +23,12 @@ return {
 				-- wo = { wrap = true } -- Wrap notifications
 			},
 		},
+		scratch = {
+			name = "Hello Pradeep",
+			-- your scratch configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
 	},
 	keys = {
 		-- i have changed
@@ -187,6 +193,13 @@ return {
 			mode = { "n", "x" },
 		},
 		-- search
+		{
+			"<leader>sr",
+			function()
+				Snacks.picker.resume()
+			end,
+			desc = "Resume",
+		},
 		{
 			"<leader>sc",
 			function()
@@ -354,7 +367,6 @@ return {
 		-- { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
 		-- { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
 		-- { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
-		-- { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
 		-- { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
 		-- { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
 		-- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },

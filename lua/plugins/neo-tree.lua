@@ -18,11 +18,15 @@ return {
 			end,
 			desc = "Explorer NeoTree (File Dir)",
 		},
-		-- {
-		-- 	"<leader>e",
-		-- 	"<cmd>Neotree filesystem reveal left toggle<CR>",
-		-- 	desc = "Open neo tree",
-		-- },
+		-- space + e to open neotree setting
+		{
+			"<leader>e",
+			"<cmd>Neotree filesystem reveal_force_cwd left toggle<CR>",
+			desc = "Open neo tree",
+		},
+		-- { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Project Root)", remap = true },
+		-- space + e to open neotree setting
+
 		-- Open in current working directory
 		{
 			"<leader>fE",
@@ -31,7 +35,6 @@ return {
 			end,
 			desc = "Explorer NeoTree (cwd)",
 		},
-		{ "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Project Root)", remap = true },
 		-- { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
 
 		-- Git and buffers
@@ -81,7 +84,6 @@ return {
 	opts = function(_, opts)
 		opts.sources = { "filesystem", "buffers", "git_status" }
 		opts.open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "Outline" }
-
 		opts.filesystem = {
 			bind_to_cwd = true,
 			follow_current_file = { enabled = true },
@@ -90,6 +92,9 @@ return {
 				visible = true,
 				hide_dotfiles = false,
 				hide_gitignored = false,
+				hide_by_name = {
+					".git",
+				},
 			},
 		}
 
@@ -127,6 +132,7 @@ return {
 			},
 			git_status = {
 				symbols = {
+					modified = "", -- or ""
 					unstaged = "󰄱",
 					staged = "󰱒",
 				},

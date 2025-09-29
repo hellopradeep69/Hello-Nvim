@@ -3,6 +3,7 @@ return {
 	lazy = false,
 	branch = "main",
 	build = ":TSUpdate",
+	event = "BufReadPre",
 	config = function()
 		require("nvim-treesitter").install({
 			"bash",

@@ -37,7 +37,7 @@ return {
 			end
 		end
 
-		-- 🔴 Turn off all inlay hints globally
+		--  Turn off all inlay hints globally
 		vim.lsp.handlers["textDocument/inlayHint"] = function() end
 
 		-- Diagnostics UI

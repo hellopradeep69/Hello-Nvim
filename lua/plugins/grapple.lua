@@ -5,7 +5,7 @@ return {
 		icons = false, -- setting to "true" requires "nvim-web-devicons"
 		status = true,
 		-- style = "relative",
-		style = "basename",
+		-- style = "basename",
 		-- quick_select = "qwertyuio",
 		quick_select = "1234567890",
 		GrappleTitle = false,
@@ -27,7 +27,7 @@ return {
 			focusable = false,
 			style = "minimal",
 
-			title = "Grapple", -- fallback title for Grapple windows
+			title = "rapple", -- fallback title for Grapple windows
 			title_pos = "left",
 			title_padding = " ", -- custom: adds padding around window title
 

@@ -25,8 +25,7 @@ map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
--- map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
--- map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+
 map("n", "<leader>dd", function()
 	Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
@@ -81,7 +80,6 @@ map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- stylua: ignore start
-
 -- toggle options
 Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
 Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
@@ -89,7 +87,7 @@ Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leade
 Snacks.toggle.diagnostics():map("<leader>ud")
 Snacks.toggle.line_number():map("<leader>ul")
 Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }):map("<leader>uc")
-Snacks.toggle.treesitter():map("<leader>uT")
+-- Snacks.toggle.treesitter():map("<leader>uT")
 -- Snacks.toggle.option("background", { off = "light", on = "dark" , name = "Dark Background" }):map("<leader>ub")
 -- Snacks.toggle.dim():map("<leader>uD")
 Snacks.toggle.animate():map("<leader>ua")
@@ -116,20 +114,10 @@ end, { desc = "Git Browse (copy)" })
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
--- highlights under cursor
--- map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
--- map("n", "<leader>uI", function() vim.treesitter.inspect_tree() vim.api.nvim_input("I") end, { desc = "Inspect Tree" })
--- floating terminal
--- map("n", "<leader>fT", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
-
--- windows
--- Map <leader>o to switch to the next window
--- vim.keymap.set("n", "<leader>o", "<C-w>w", { noremap = true, silent = true })
--- map("n", "<leader>O", "<C-w>W", { noremap = true, silent = false})
 map("n", "<leader>o", "<C-w>w", { desc = "toggle Window",noremap = true, silent = false})
 
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
--- Snacks.toggle.zoom():map("<leader>wm"):map("<leader>uZ")
+
 Snacks.toggle.zen():map("<leader>uz")
 
 -- tabs
@@ -154,7 +142,7 @@ end
 vim.keymap.set("i", "jj", "<Esc>", { desc = "jj to escape insert mode" })
 vim.o.timeoutlen = 300
 
-local map = vim.keymap.set
+-- local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Don't copy to clipboard when deleting
