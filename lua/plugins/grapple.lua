@@ -11,14 +11,15 @@ return {
 		GrappleTitle = false,
 		default_scopes = {
 			lsp = { hidden = true },
+			git_branch = { hidden = true },
 			git = { hidden = true },
-			cwd = { hidden = true },
+			-- cwd = { hidden = true },
 			static = { hidden = true },
 		},
 		win_opts = {
 			-- Can be fractional
 			width = 70,
-			height = 8,
+			height = 7,
 			row = 0.5,
 			col = 0.5,
 

@@ -169,7 +169,9 @@ map("n", "<ESC>", ":nohlsearch<CR>", {desc = "clear search highlight"})
 vim.keymap.set("n", "<leader>r", ":%s/", { desc = "Search and Replace" })
 vim.keymap.set("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
-vim.api.nvim_set_keymap("n", "<leader>m", ":lua ToggleGrappleStyle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>m", ":lua ToggleGrappleStyle()<CR>", { desc = "GRAPPLE STYLE " })
+
+-- vim.keymap.set("n", "<leader>a", ":Lazy reload ", opts)
 -- vim.keymap.set("c", "jj", "<Esc>", { desc = "Abort command-line" })
 -- vim.keymap.set("n", "<leader>sr", ":%s///gc<Left><Left>", { desc = "Search and Replace (global)" })
 

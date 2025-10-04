@@ -61,6 +61,8 @@ return {
 			typescript = { "// %s", "/* %s */" }, -- langs can have multiple commentstrings
 			vue = "<!-- %s -->",
 			xaml = "<!-- %s -->",
+			-- temp delete it
+			lf = "# %s",
 		},
 	},
 }
