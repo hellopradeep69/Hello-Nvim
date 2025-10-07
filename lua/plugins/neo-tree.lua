@@ -8,34 +8,13 @@ return {
 		"nvim-tree/nvim-web-devicons", -- optional, for icons
 	},
 	keys = {
-		-- Open in project root (fallback to cwd if no LSP root)
-		{
-			"<leader>fe",
-			function()
-				local file_dir = vim.fn.expand("%:p:h:h") -- parent directory of current file
-				-- local file_dir = vim.fn.expand("%:p:h") -- parent directory of current file
-				require("neo-tree.command").execute({ toggle = true, dir = file_dir })
-			end,
-			desc = "Explorer NeoTree (File Dir)",
-		},
 		-- space + e to open neotree setting
 		{
 			"<leader>e",
 			"<cmd>Neotree filesystem reveal_force_cwd left toggle<CR>",
 			desc = "Open neo tree",
 		},
-		-- { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Project Root)", remap = true },
 		-- space + e to open neotree setting
-
-		-- Open in current working directory
-		{
-			"<leader>fE",
-			function()
-				require("neo-tree.command").execute({ toggle = true, dir = vim.fn.getcwd() })
-			end,
-			desc = "Explorer NeoTree (cwd)",
-		},
-		-- { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
 
 		-- Git and buffers
 		{

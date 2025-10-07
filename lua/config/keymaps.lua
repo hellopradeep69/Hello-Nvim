@@ -9,7 +9,7 @@ map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, 
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 -- Move to window using the <ctrl> hjkl keys
-map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+-- map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
@@ -56,9 +56,6 @@ map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 
 -- lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
-
--- new file
-map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
@@ -155,9 +152,6 @@ map("v", "x", '"_x', opts)
 -- open menu 
 -- map("n", "<leader>m", ":Dashboard<CR>", {desc = "Open Menu"})
 
--- Optional: still allow yanking to clipboard
-map("n", "<leader>y", '"+y', { desc = "yank" })
-map("v", "<leader>y", '"+y', { desc = "yank" })
 
 -- move stuff easily
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
@@ -171,7 +165,19 @@ vim.keymap.set("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
 vim.api.nvim_set_keymap("n", "<leader>m", ":lua ToggleGrappleStyle()<CR>", { desc = "GRAPPLE STYLE " })
 
--- vim.keymap.set("n", "<leader>a", ":Lazy reload ", opts)
+vim.keymap.set("n", "<leader>k", ":Screenkey toggle<CR>", { desc = "KEY show" })
+
+vim.keymap.set(
+  "n",
+  "<C-h>",
+  function()
+    vim.cmd("Grapple tag")
+    Snacks.notify.info("Grapple: Added")
+  end,
+  { desc = "Tag a file" }
+)
+
+vim.keymap.set("n", "<leader>a", ":Lazy reload", opts)
 -- vim.keymap.set("c", "jj", "<Esc>", { desc = "Abort command-line" })
 -- vim.keymap.set("n", "<leader>sr", ":%s///gc<Left><Left>", { desc = "Search and Replace (global)" })
 

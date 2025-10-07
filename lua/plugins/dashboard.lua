@@ -29,15 +29,14 @@ return {
 				header = vim.split(logo, "\n"),
         -- stylua: ignore
         center = {
-          { action = function() snacks.picker.files() end,                desc = " Find File",       icon = " ", key = "f" },
-          { action = "ene | startinsert",                                 desc = " New File",        icon = " ", key = "n" },
-          { action = function() snacks.picker.recent() end,               desc = " Recent Files",    icon = " ", key = "r" },
-          { action = function() snacks.picker.grep() end,                 desc = " Find Text",       icon = " ", key = "g" },
-          { action = function() snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end,       desc = " Config",          icon = " ", key = "c" },
-          { action = "Lazy update",                                    desc = " Lazy Update",       icon = " ", key = "u" },
-          { action = "Lazy",                                           desc = " Lazy",            icon = " ", key = "l" },
-          { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = " ", key = "q" },
-       -- { action = 'lua require("persistence").load()',              desc = " Restore Session", icon = " ", key = "s" },
+          { action = function() snacks.picker.files() end,                desc = " Find File",       key = "f" },
+          { action = "ene | startinsert",                                 desc = " New File",        key = "n" },
+          { action = function() snacks.picker.recent() end,               desc = " Recent Files",    key = "r" },
+          { action = function() snacks.picker.grep() end,                 desc = " Find Text",       key = "g" },
+          { action = function() snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end,       desc = " Config",          key = "c" },
+          { action = "Lazy update",                                    desc = " Lazy Update",       key = "u" },
+          { action = "Lazy",                                           desc = " Lazy",            key = "l" },
+          { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            key = "q" },
         },
 				-- footer = function()
 				footer = {},

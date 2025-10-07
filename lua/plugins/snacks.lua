@@ -1,3 +1,5 @@
+-- @diagnostic disable-next-line: undefined-global
+Snacks = Snacks
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -62,10 +64,16 @@ return {
 			end,
 			desc = "Buffers",
 		},
+		-- {
+		-- 	"<leader>/",
+		-- 	function()
+		-- 		Snacks.picker.grep()
+		-- 	end,
+		-- },
 		{
 			"<leader>/",
 			function()
-				Snacks.picker.grep()
+				Snacks.picker.grep({ search = vim.fn.input("Grep > ") })
 			end,
 		},
 		{
@@ -82,7 +90,6 @@ return {
 			end,
 			desc = "Notification History",
 		},
-		-- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
 		-- find
 		{
 			"<leader>fc",
@@ -169,23 +176,22 @@ return {
 			end,
 			desc = "Git Log File",
 		},
-		-- Grep
 		{
-			"<leader>sb",
+			"<leader>sB",
 			function()
 				Snacks.picker.lines()
 			end,
 			desc = "Buffer Lines",
 		},
 		{
-			"<leader>sB",
+			"<leader>sb",
 			function()
 				Snacks.picker.grep_buffers()
 			end,
 			desc = "Grep Open Buffers",
 		},
 		{
-			"<leader>sw",
+			"<leader>fw",
 			function()
 				Snacks.picker.grep_word()
 			end,
@@ -288,6 +294,14 @@ return {
 		},
 		-- Other
 		{
+			"<leader>sq",
+			function()
+				Snacks.picker.qflist()
+			end,
+			desc = "Quickfix List",
+		},
+
+		{
 			"<leader>z",
 			function()
 				Snacks.zen()
@@ -366,39 +380,12 @@ return {
 		-- { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
 		-- { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
 		-- { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
-		-- { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
 		-- { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
 		-- { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
 		-- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-		-- { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
 		-- { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
-		-- { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
 		-- { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
 		-- { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
-		-- { '<leader>s/', function() Snacks.picker.search_history() end, desc = "Search History" },
-		-- { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
-		-- { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
-		-- { "<leader>sC", function() Snacks.picker.command_history() end, desc = "Command History" },
-		-- { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
-		-- { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
-		-- {
-		--   "<leader>N",
-		--   desc = "Neovim News",
-		--   function()
-		--     Snacks.win({
-		--       file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
-		--       width = 0.6,
-		--       height = 0.6,
-		--       wo = {
-		--         spell = false,
-		--         wrap = false,
-		--         signcolumn = "yes",
-		--         statuscolumn = " ",
-		--         conceallevel = 3,
-		--       },
-		--     })
-		--   end,
-		-- }
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("User", {
@@ -419,7 +406,7 @@ return {
 				-- Create some toggle mappings
 				Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
 				Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
-				Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
+				Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>un")
 				Snacks.toggle.diagnostics():map("<leader>ud")
 				Snacks.toggle.line_number():map("<leader>ul")
 				Snacks.toggle

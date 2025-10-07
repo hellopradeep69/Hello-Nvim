@@ -1,8 +1,5 @@
 -- OPTIONS CONFIGURATION FOR
-
-vim.opt.confirm = true --
-vim.opt.cmdheight = 0
-vim.opt.showmode = false
+vim = vim
 -- GENERAL SETTINGS
 vim.opt.number = true -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
@@ -13,13 +10,14 @@ vim.opt.cursorline = true -- Highlight the current line
 vim.opt.termguicolors = true -- Enable true color support
 vim.opt.mouse = "" -- Disable mouse support
 vim.opt.colorcolumn = "85"
+vim.opt.confirm = true --
+vim.opt.cmdheight = 0
+vim.opt.showmode = false
 
 -- FILE AND BACKUP SETTINGS
 vim.opt.swapfile = false -- Don't use swap files
 vim.opt.undofile = true -- Save undo history to file
 vim.opt.undolevels = 10000
--- vim.opt.backup = false          -- Optional: disable backup files (commented out)
--- vim.opt.nowritebackup = true -- Don't make a backup before overwriting a file
 
 -- SEARCH SETTINGS
 vim.opt.ignorecase = true -- Ignore case in search patterns
@@ -31,13 +29,12 @@ vim.opt.incsearch = true -- Show search matches as you type
 vim.cmd([[filetype plugin indent on]])
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.smartindent = true -- Make indenting smarter
 vim.opt.tabstop = 4 -- Number of spaces per tab
 vim.opt.shiftwidth = 4 -- Number of spaces for autoindent
 vim.opt.expandtab = true -- Convert tabs to spaces
 
 -- WRAPPING AND SCROLLING
-vim.opt.wrap = true -- Enable line wrapping
+vim.opt.wrap = false -- Enable line wrapping
 vim.opt.scrolloff = 8 -- Minimum number of screen lines above/below the cursor
 vim.opt.sidescrolloff = 8 -- Minimum number of columns to the left/right of the cursor
 
@@ -54,11 +51,13 @@ vim.opt.laststatus = 2 -- Always display the status line
 vim.opt.timeoutlen = 500 -- Time to wait for a mapped sequence (in ms)
 vim.opt.ttimeoutlen = 0 -- Time to wait for a key code sequence (faster responsiveness)
 
-vim.opt.background = "dark"
+-- vim.opt.background = "dark"
 -- vim.cmd.colorscheme("default") -- example theme
 --
 -- it fill idk but file stuff
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- fill charc stuff does something
 vim.opt.fillchars = {
 	foldopen = "",
 	foldclose = "",
@@ -67,3 +66,6 @@ vim.opt.fillchars = {
 	diff = "╱",
 	eob = " ",
 }
+
+-- show some charc that i like from lazyvim
+vim.opt.list = true

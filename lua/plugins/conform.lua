@@ -22,10 +22,11 @@ return {
 		},
 	},
 	opts = {
+		notify_on_error = true,
 		default_format_opts = {
 			timeout_ms = 3000,
 			async = false, -- keep blocking for reliable results
-			quiet = false,
+			quiet = true,
 			lsp_format = "fallback", -- use LSP if no formatter available
 		},
 		format_on_save = { timeout_ms = 500 },
@@ -45,7 +46,7 @@ return {
 			kotlin = { "ktlint" },
 			go = { "gofmt" },
 			rust = { "rustfmt" },
-			-- markdown = { "prettier" },
+			markdown = { "prettier" },
 			yaml = { "prettier" },
 			toml = { "taplo" },
 			-- add more here, like:

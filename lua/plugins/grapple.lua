@@ -1,7 +1,7 @@
 return {
 	"cbochs/grapple.nvim",
 	opts = {
-		scope = "global", -- also try out "git_branch"
+		scope = "cwd", -- also try out "git_branch"
 		icons = false, -- setting to "true" requires "nvim-web-devicons"
 		status = true,
 		-- style = "relative",
@@ -38,7 +38,9 @@ return {
 	},
 
 	keys = {
-		{ "<leader>H", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
+		-- { "<leader>H", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
+		-- { "<c-h>", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
+
 		{ "<leader>h", "<cmd>Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
 
 		{ "<leader>j", "<cmd>Grapple cycle_scopes next<cr>", desc = "cycle scopes" },
