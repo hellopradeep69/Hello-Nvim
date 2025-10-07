@@ -39,6 +39,7 @@ Hello-Nvim
 │   ├── flash.lua
 │   ├── gitsigns.lua
 │   ├── grapple.lua
+│   ├── grugfar.lua
 │   ├── live-preview.lua
 │   ├── lualine.lua
 │   ├── mason.lua
