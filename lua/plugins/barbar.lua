@@ -1,7 +1,7 @@
 return {
 	{
 		"romgrk/barbar.nvim",
-		-- event = "VeryLazy",
+		event = "BufReadPre",
 		init = function()
 			-- Disable auto-setup so we control config
 			vim.g.barbar_auto_setup = false

@@ -134,14 +134,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 ---"basename" | "relative"
-local grapple = require("grapple")
-local current_style = "relative"
-function ToggleGrappleStyle()
-	if current_style == "relative" then
-		current_style = "basename"
-	else
-		current_style = "relative"
-	end
-	grapple.setup({ style = current_style })
-	Snacks.notify.info("Grapple:" .. current_style)
-end
+-- $HOME/.config/nvim/lua/config/keymaps.lua
+-- local grapple = require("grapple")
+-- local current_style = "relative"
+-- function ToggleGrappleStyle()
+-- 	if current_style == "relative" then
+-- 		current_style = "basename"
+-- 	else
+-- 		current_style = "relative"
+-- 	end
+-- 	grapple.setup({ style = current_style })
+-- 	Snacks.notify.info("Grapple:" .. current_style)
+-- end

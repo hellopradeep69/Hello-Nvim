@@ -1,5 +1,6 @@
 return {
 	"cbochs/grapple.nvim",
+	lazy = false,
 	opts = {
 		scope = "cwd", -- also try out "git_branch"
 		icons = false, -- setting to "true" requires "nvim-web-devicons"
@@ -18,7 +19,7 @@ return {
 		},
 		win_opts = {
 			-- Can be fractional
-			width = 70,
+			width = 75,
 			height = 7,
 			row = 0.5,
 			col = 0.5,
@@ -44,7 +45,7 @@ return {
 		{ "<leader>h", "<cmd>Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
 
 		{ "<leader>j", "<cmd>Grapple cycle_scopes next<cr>", desc = "cycle scopes" },
-		{ "<c-s-n>", "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
-		{ "<c-s-p>", "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
+		{ "<c-j>", "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
+		{ "<c-k>", "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
 	},
 }

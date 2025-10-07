@@ -8,11 +8,11 @@ map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr =
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
--- Move to window using the <ctrl> hjkl keys
+-- move to window using the <ctrl> hjkl keys
 -- map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+-- map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
+-- map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
+-- map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
@@ -115,7 +115,7 @@ map("n", "<leader>o", "<C-w>w", { desc = "toggle Window",noremap = true, silent 
 
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 
-Snacks.toggle.zen():map("<leader>uz")
+-- Snacks.toggle.zen():map("<leader>uz")
 
 -- tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
@@ -135,6 +135,7 @@ if vim.fn.has("nvim-0.11") == 0 then
     return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
   end, { expr = true, desc = "Jump Previous" })
 end
+
 -- jj as an escape
 vim.keymap.set("i", "jj", "<Esc>", { desc = "jj to escape insert mode" })
 vim.o.timeoutlen = 300
@@ -163,21 +164,22 @@ map("n", "<ESC>", ":nohlsearch<CR>", {desc = "clear search highlight"})
 vim.keymap.set("n", "<leader>r", ":%s/", { desc = "Search and Replace" })
 vim.keymap.set("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
-vim.api.nvim_set_keymap("n", "<leader>m", ":lua ToggleGrappleStyle()<CR>", { desc = "GRAPPLE STYLE " })
+-- vim.api.nvim_set_keymap("n", "<leader>m", ":lua ToggleGrappleStyle()<CR>", { desc = "GRAPPLE STYLE " })
 
 vim.keymap.set("n", "<leader>k", ":Screenkey toggle<CR>", { desc = "KEY show" })
 
-vim.keymap.set(
-  "n",
-  "<C-h>",
-  function()
-    vim.cmd("Grapple tag")
-    Snacks.notify.info("Grapple: Added")
-  end,
-  { desc = "Tag a file" }
-)
+ vim.keymap.set(
+   "n",
+   "<C-h>",
+   function()
+     vim.cmd("Grapple tag")
+     Snacks.notify.info("Grapple: Added")
+   end,
+   { desc = "Tag a file" }
+ )
 
-vim.keymap.set("n", "<leader>a", ":Lazy reload", opts)
+vim.keymap.set("n", "<leader>a", ":Lazy reload grapple.nvim<CR>", opts)
+
 -- vim.keymap.set("c", "jj", "<Esc>", { desc = "Abort command-line" })
 -- vim.keymap.set("n", "<leader>sr", ":%s///gc<Left><Left>", { desc = "Search and Replace (global)" })
 
