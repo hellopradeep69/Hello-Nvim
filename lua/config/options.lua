@@ -6,7 +6,7 @@ vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.ruler = true -- Show the cursor position all the time
 vim.opt.showcmd = true -- Show (partial) command in the last line of the screen
 vim.opt.cursorline = true -- Highlight the current line
--- vim.opt.guicursor = ""
+-- vim.opt.guicursor = "" -- big blocky juicey cursor
 vim.opt.termguicolors = true -- Enable true color support
 vim.opt.mouse = "" -- Disable mouse support
 vim.opt.colorcolumn = "85"
@@ -70,3 +70,11 @@ vim.opt.fillchars = {
 
 -- show some charc that i like from lazyvim
 vim.opt.list = true
+
+vim.opt.listchars = {
+	tab = "  ", -- default tab symbol
+	trail = "-", -- default trailing space symbol
+	extends = ">", -- when line extends
+	precedes = "<", -- when text precedes screen
+	eol = " ", -- end-of-line symbol
+}

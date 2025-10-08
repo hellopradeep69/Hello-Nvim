@@ -1,3 +1,10 @@
+function ColorMyPencils(color)
+	color = color or "gruvbox-hard"
+	vim.cmd.colorscheme(color)
+
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
 -- return {
 --   {
 --     "LazyVim/LazyVim",
@@ -51,17 +58,17 @@ return {
 -- }
 -- Lua with Lazy.nvim:
 -- return {
---   "Mofiqul/adwaita.nvim",
---   lazy = false,
---   priority = 1000,
+-- 	"Mofiqul/adwaita.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
 --
---   -- configure and set on startup
---   config = function()
---     vim.g.adwaita_darker = true -- for darker version
---     vim.g.adwaita_disable_cursorline = true -- to disable cursorline
---     vim.g.adwaita_transparent = true -- makes the background transparent
---     vim.cmd("colorscheme adwaita")
---   end,
+-- 	-- configure and set on startup
+-- 	config = function()
+-- 		vim.g.adwaita_darker = true -- for darker version
+-- 		vim.g.adwaita_disable_cursorline = true -- to disable cursorline
+-- 		vim.g.adwaita_transparent = true -- makes the background transparent
+-- 		vim.cmd("colorscheme adwaita")
+-- 	end,
 -- }
 ---- pywal script
 -- return {
@@ -75,11 +82,11 @@ return {
 -- }
 -- lua/plugins/rose-pine.lua
 -- return {
---   "rose-pine/neovim",
---   name = "rose-pine",
---   config = function()
---     vim.cmd("colorscheme rose-pine")
---   end,
+-- 	"rose-pine/neovim",
+-- 	name = "rose-pine",
+-- 	config = function()
+-- 		vim.cmd("colorscheme rose-pine")
+-- 	end,
 -- }
 --
 -- in transparent gruvox
