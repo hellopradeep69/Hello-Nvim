@@ -1,3 +1,4 @@
+-- vim.cmd("Screenkey toggle")
 -- print("Loading...")
 require("config.lazy")
 require("config.keymaps")

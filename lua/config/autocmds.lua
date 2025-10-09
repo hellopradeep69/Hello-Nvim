@@ -70,6 +70,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		"startuptime",
 		"tsplayground",
 	},
+
 	callback = function(event)
 		vim.bo[event.buf].buflisted = false
 		vim.schedule(function()
@@ -133,16 +134,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
----"basename" | "relative"
--- $HOME/.config/nvim/lua/config/keymaps.lua
--- local grapple = require("grapple")
--- local current_style = "relative"
--- function ToggleGrappleStyle()
--- 	if current_style == "relative" then
--- 		current_style = "basename"
--- 	else
--- 		current_style = "relative"
--- 	end
--- 	grapple.setup({ style = current_style })
--- 	Snacks.notify.info("Grapple:" .. current_style)
--- end
+-- Grap will change layout
+local current_style = "relative"
+vim.api.nvim_create_user_command("Grap", function()
+	if current_style == "relative" then
+		current_style = "basename"
+	else
+		current_style = "relative"
+	end
+	require("grapple").setup({ style = current_style })
+	Snacks.notify.info("Grapple:" .. current_style)
+end, {})

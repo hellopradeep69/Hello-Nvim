@@ -168,15 +168,15 @@ vim.keymap.set("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
 vim.keymap.set("n", "<leader>k", ":Screenkey toggle<CR>", { desc = "KEY show" })
 
- vim.keymap.set(
-   "n",
-   "<C-h>",
-   function()
-     vim.cmd("Grapple tag")
-     Snacks.notify.info("Grapple: Added")
-   end,
-   { desc = "Tag a file" }
- )
+ -- vim.keymap.set(
+ --   "n",
+ --   "<C-h>",
+ --   function()
+ --     vim.cmd("Grapple tag")
+ --     Snacks.notify.info("Grapple: Added")
+ --   end,
+ --   { desc = "Tag a file" }
+ -- )
 
 vim.keymap.set("n", "<leader>a", ":Lazy reload grapple.nvim<CR>", opts)
 
