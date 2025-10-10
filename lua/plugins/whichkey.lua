@@ -48,7 +48,7 @@ return {
 				{
 					"<leader>/",
 					function()
-						Snacks.picker.grep({ search = vim.fn.input("Grep > ") })
+						Snacks.picker.grep()
 					end,
 					hidden = true,
 				},
@@ -63,13 +63,6 @@ return {
 					"<leader>,",
 					function()
 						Snacks.picker.buffers()
-					end,
-					hidden = true,
-				},
-				{
-					"<leader><space>",
-					function()
-						Snacks.picker.smart()
 					end,
 					hidden = true,
 				},
