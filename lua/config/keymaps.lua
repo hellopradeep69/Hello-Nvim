@@ -2,18 +2,6 @@
 
 local map = vim.keymap.set
 
--- better up/down
-map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-
--- move to window using the <ctrl> hjkl keys
--- map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
--- map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
--- map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
--- map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
-
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
@@ -23,8 +11,6 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window W
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
-map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
 map("n", "<leader>dd", function()
 	Snacks.bufdelete()
@@ -46,7 +32,7 @@ map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
--- better indenting
+-- better indenting | okie i agree folke
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
@@ -84,7 +70,6 @@ Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leade
 Snacks.toggle.diagnostics():map("<leader>ud")
 Snacks.toggle.line_number():map("<leader>ul")
 Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }):map("<leader>uc")
--- Snacks.toggle.treesitter():map("<leader>uT")
 -- Snacks.toggle.option("background", { off = "light", on = "dark" , name = "Dark Background" }):map("<leader>ub")
 -- Snacks.toggle.dim():map("<leader>uD")
 Snacks.toggle.animate():map("<leader>ua")
@@ -105,7 +90,7 @@ end
 map("n", "<leader>gb", function() Snacks.picker.git_log_line() end, { desc = "Git Blame Line" })
 map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse (open)" })
 map({"n", "x" }, "<leader>gY", function()
-  Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
+    Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
 end, { desc = "Git Browse (copy)" })
 
 -- quit
@@ -114,8 +99,6 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 map("n", "<leader>o", "<C-w>w", { desc = "toggle Window",noremap = true, silent = false})
 
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
-
--- Snacks.toggle.zen():map("<leader>uz")
 
 -- tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
@@ -155,8 +138,8 @@ map("v", "x", '"_x', opts)
 
 
 -- move stuff easily
-map("v", "J", ":m '>+1<CR>gv=gv", opts)
-map("v", "K", ":m '<-2<CR>gv=gv", opts)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 map("n", "<ESC>", ":nohlsearch<CR>", {desc = "clear search highlight"})
 
@@ -168,17 +151,20 @@ vim.keymap.set("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
 vim.keymap.set("n", "<leader>k", ":Screenkey toggle<CR>", { desc = "KEY show" })
 
- -- vim.keymap.set(
- --   "n",
- --   "<C-h>",
- --   function()
- --     vim.cmd("Grapple tag")
- --     Snacks.notify.info("Grapple: Added")
- --   end,
- --   { desc = "Tag a file" }
- -- )
-
 vim.keymap.set("n", "<leader>a", ":Lazy reload grapple.nvim<CR>", opts)
+
+vim.keymap.set("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", {desc = "Debug", silent = true})
+
+-- vim.keymap.set("n", "<leader>R", function ()
+--     vim.cmd("write")
+-- vim.cmd(":sil ! ~/.local/bin/topen.sh code %")
+-- end, {desc = "Code runner", silent = true})
+
+-- vim.keymap.set("n", "<leader>R", function ()
+--    local file = vim.api.nvim_buf_get_name(0)
+--     vim.cmd("! ~/.local/bin/debug " .. file)
+--     vim.cmd("startinsert")
+-- end, { desc = "Code Runner" })
 
 -- vim.keymap.set("n", "<leader>R", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 

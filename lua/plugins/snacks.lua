@@ -36,7 +36,7 @@ return {
 			function()
 				Snacks.picker.files()
 			end,
-			desc = "Find Files",
+			desc = "Another Find Files",
 		},
 		{
 			"<leader>I",
@@ -372,13 +372,19 @@ return {
 			desc = "Prev Reference",
 			mode = { "n", "t" },
 		},
+		{
+			"<leader>sh",
+			function()
+				Snacks.picker.help()
+			end,
+			desc = "Help Pages",
+		},
 
 		--commented
 		-- { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
 		-- { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
 		-- { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
 		-- { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
-		-- { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
 		-- { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
 		-- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
 		-- { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },

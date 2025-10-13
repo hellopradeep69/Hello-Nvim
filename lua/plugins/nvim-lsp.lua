@@ -28,7 +28,7 @@ return {
 
 			bufmap("n", "gd", vim.lsp.buf.definition, "Go to Definition")
 			bufmap("n", "K", vim.lsp.buf.hover, "Hover Docs")
-			bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename Symbol")
+			bufmap("n", "<leader>cn", vim.lsp.buf.rename, "Rename Symbol")
 			bufmap("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
 
 			-- Inlay hints (if supported)

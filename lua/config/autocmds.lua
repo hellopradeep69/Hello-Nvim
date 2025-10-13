@@ -67,6 +67,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		"notify",
 		"qf",
 		"startuptime",
+		"terminal",
 		"tsplayground",
 	},
 
