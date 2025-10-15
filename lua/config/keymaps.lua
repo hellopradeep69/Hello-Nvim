@@ -1,4 +1,6 @@
 -- use `vim.keymap.set` instead
+local vim = vim
+local Snacks = Snacks
 
 local map = vim.keymap.set
 
@@ -94,9 +96,10 @@ map({"n", "x" }, "<leader>gY", function()
 end, { desc = "Git Browse (copy)" })
 
 -- quit
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+-- map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 map("n", "<leader>o", "<C-w>w", { desc = "toggle Window",noremap = true, silent = false})
+map("n", "<leader>qq", "<C-w>qq", { desc = "Quit Window",noremap = true, silent = false})
 
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 
@@ -154,6 +157,11 @@ vim.keymap.set("n", "<leader>k", ":Screenkey toggle<CR>", { desc = "KEY show" })
 vim.keymap.set("n", "<leader>a", ":Lazy reload grapple.nvim<CR>", opts)
 
 vim.keymap.set("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", {desc = "Debug", silent = true})
+
+-- vim.keymap.set("n", "<leader>sl", function ()
+-- vim.cmd("AutoSession search")
+-- vim.cmd("stopinsert")
+-- end, { desc = "AutoSession Picker", })
 
 -- vim.keymap.set("n", "<leader>R", function ()
 --     vim.cmd("write")

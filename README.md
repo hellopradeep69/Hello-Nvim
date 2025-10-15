@@ -18,50 +18,58 @@
 
 Hello-Nvim
 │
+├── after
+│   └── ftplugin
+│       ├── c.lua
+│       ├── cpp.lua
+│       ├── java.lua
+│       └── python.lua
 ├── colors
-│   └── custom.vim
+│   └── custom.vim
 ├── init.lua
 ├── lazy-lock.json
 ├── lua
-│   ├── config
-│   │   ├── autocmds.lua
-│   │   ├── keymaps.lua
-│   │   ├── lazy.lua
-│   │   └── options.lua
-│   └── plugins
-│   ├── autosession.lua
-│   ├── barbar.lua
-│   ├── blink.lua
-│   ├── colorizer.lua
-│   ├── colorscheme.lua
-│   ├── conform.lua
-│   ├── dashboard.lua
-│   ├── flash.lua
-│   ├── gitsigns.lua
-│   ├── grapple.lua
-│   ├── grugfar.lua
-│   ├── live-preview.lua
-│   ├── lualine.lua
-│   ├── mason.lua
-│   ├── miniai.lua
-│   ├── minipairs.lua
-│   ├── minisurround.lua
-│   ├── neo-tree.lua
-│   ├── nvim-lsp.lua
-│   ├── render-markdown.lua
-│   ├── screenkey.lua
-│   ├── snacks.lua
-│   ├── treesitter.lua
-│   ├── trouble.lua
-│   ├── ts-comments.lua
-│   ├── undotree.lua
-│   └── whichkey.lua
+│   ├── config
+│   │   ├── autocmds.lua
+│   │   ├── keymaps.lua
+│   │   ├── lazy.lua
+│   │   └── options.lua
+│   └── plugins
+│       ├── autosession.lua
+│       ├── barbar.lua
+│       ├── blink.lua
+│       ├── colorizer.lua
+│       ├── colorscheme.lua
+│       ├── conform.lua
+│       ├── dashboard.lua
+│       ├── flash.lua
+│       ├── gitsigns.lua
+│       ├── grapple.lua
+│       ├── grugfar.lua
+│       ├── live-preview.lua
+│       ├── lualine.lua
+│       ├── mason.lua
+│       ├── miniai.lua
+│       ├── minipairs.lua
+│       ├── minisurround.lua
+│       ├── neo-tree.lua
+│       ├── nvim-lsp.lua
+│       ├── render-markdown.lua
+│       ├── screenkey.lua
+│       ├── session.lua
+│       ├── snacks.lua
+│       ├── treesitter.lua
+│       ├── trouble.lua
+│       ├── ts-comments.lua
+│       ├── undotree.lua
+│       └── whichkey.lua
+├── README.md
 └── snippets
-├── css.json
-├── html.json
-├── java.json
-├── markdown.json
-└── python.json
+    ├── css.json
+    ├── html.json
+    ├── java.json
+    ├── markdown.json
+    └── python.json
 ```
 
 ---

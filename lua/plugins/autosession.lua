@@ -30,14 +30,14 @@ return {
 			desc = "AutoSession save",
 		},
 		{
-			"<leader>sl",
-			"<CMD>AutoSession search<CR>",
-			desc = "AutoSession Picker",
-		},
-		{
 			"<leader>sx",
 			"<CMD>AutoSession deletePicker<CR>",
 			desc = "AutoSession Delete",
 		},
 	},
+
+	vim.keymap.set("n", "<leader>sl", function()
+		vim.cmd("AutoSession search")
+		vim.cmd("stopinsert")
+	end, { desc = "AutoSession Picker" }),
 }
