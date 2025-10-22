@@ -102,7 +102,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function(args)
-		require("conform").format({ bufnr = args.buf, lsp_fallback = true })
+		require("conform").format({ bufnr = args.buf })
 	end,
 })
 
@@ -128,5 +128,14 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		if mark[1] > 0 and mark[1] <= line_count then
 			vim.cmd('normal! g`"zz')
 		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "sh",
+	callback = function()
+		vim.api.nvim_create_user_command("X", function()
+			vim.cmd("!chmod +x %")
+		end, {})
 	end,
 })

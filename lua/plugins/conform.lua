@@ -26,7 +26,7 @@ return {
 		default_format_opts = {
 			timeout_ms = 3000,
 			async = false, -- keep blocking for reliable results
-			quiet = true,
+			quiet = false,
 			lsp_format = "fallback", -- use LSP if no formatter available
 		},
 		format_on_save = { timeout_ms = 500 },
@@ -37,7 +37,7 @@ return {
 			fish = { "fish_indent" },
 			sh = { "shfmt" },
 			javascript = { "prettier" },
-			python = { "black" },
+			-- python = { "black" },
 			typescript = { "prettier" },
 			-- html = { "prettier" },
 			-- css = { "prettier" },
@@ -55,15 +55,4 @@ return {
 			injected = { options = { ignore_errors = true } },
 		},
 	},
-	config = function(_, opts)
-		require("conform").setup(opts)
-
-		-- optional: format on save
-		-- vim.api.nvim_create_autocmd("BufWritePre", {
-		-- 	pattern = "*",
-		-- 	callback = function(args)
-		-- 		require("conform").format({ bufnr = args.buf, lsp_fallback = true })
-		-- 	end,
-		-- })
-	end,
 }

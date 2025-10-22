@@ -1,4 +1,5 @@
 -- use `vim.keymap.set` instead
+
 local vim = vim
 local Snacks = Snacks
 
@@ -140,7 +141,7 @@ map("v", "x", '"_x', opts)
 -- map("n", "<leader>m", ":Dashboard<CR>", {desc = "Open Menu"})
 
 
--- move stuff easily
+-- move stuff easily | but only with two line max
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

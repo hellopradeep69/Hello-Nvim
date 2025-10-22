@@ -1,38 +1,40 @@
 return {
 	"nvim-mini/mini.ai",
 	event = "VeryLazy",
-	opts = function()
+	config = function()
 		local ai = require("mini.ai")
-		return {
-			n_lines = 500,
+		require("mini.ai").setup({
+			n_lines = 100,
 			custom_textobjects = {
+
+				-- Function definition (needs treesitter queries with these captures)
+				F = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
 				o = ai.gen_spec.treesitter({
 					a = { "@block.outer", "@conditional.outer", "@loop.outer" },
 					i = { "@block.inner", "@conditional.inner", "@loop.inner" },
 				}),
-				f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
-				c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }),
-				t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
-				d = { "%f[%d]%d+" },
-				e = {
-					{ "%u[%l%d]+%f[^%l%d]", "%f[%S][%l%d]+%f[^%l%d]", "%f[%P][%l%d]+%f[^%l%d]", "^[%l%d]+%f[^%l%d]" },
-					"^().*()$",
-				},
-				-- remove LazyVim.mini.ai_buffer
+
+				-- Whole buffer
 				g = function()
-					local from, to = 1, vim.fn.line("$")
-					return {
-						from = { line = from, col = 1 },
-						to = { line = to, col = math.max(vim.fn.getline(to):len(), 1) },
+					local from = { line = 1, col = 1 }
+					local to = {
+						line = vim.fn.line("$"),
+						col = math.max(vim.fn.getline("$"):len(), 1),
 					}
+					return { from = from, to = to }
 				end,
+
+				-- function call
 				u = ai.gen_spec.function_call(),
 				U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }),
+
+				-- classic class stuff
+				c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }),
+
+				-- tag
+				t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
+				d = { "%f[%d]%d+" },
 			},
-		}
-	end,
-	config = function(_, opts)
-		require("mini.ai").setup(opts)
-		-- no LazyVim.on_load or ai_whichkey here
+		})
 	end,
 }
