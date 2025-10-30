@@ -7,7 +7,7 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = { enabled = false },
-		explorer = { enabled = false },
+		explorer = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
 		notifier = {
@@ -24,9 +24,6 @@ return {
 			notification = {
 				-- wo = { wrap = true } -- Wrap notifications
 			},
-		},
-		scratch = {
-			name = "Hello Pradeep",
 		},
 	},
 	keys = {
@@ -62,7 +59,7 @@ return {
 			desc = "Smart Find Files",
 		},
 		{
-			"<leader>,",
+			"<leader>fb",
 			function()
 				Snacks.picker.buffers()
 			end,
@@ -175,14 +172,14 @@ return {
 			desc = "Git Log File",
 		},
 		{
-			"<leader>sB",
+			"<leader>sb",
 			function()
 				Snacks.picker.lines()
 			end,
 			desc = "Buffer Lines",
 		},
 		{
-			"<leader>sb",
+			"<leader>sB",
 			function()
 				Snacks.picker.grep_buffers()
 			end,
@@ -303,6 +300,7 @@ return {
 			"<leader>z",
 			function()
 				Snacks.zen()
+				Snacks.notify.info("Zen Mode")
 			end,
 			desc = "Toggle Zen Mode",
 		},
@@ -381,15 +379,69 @@ return {
 		},
 
 		--commented
-		-- { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
-		-- { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
-		-- { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
-		-- { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
-		-- { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
-		-- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-		-- { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
-		-- { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
-		-- { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
+		-- {
+		-- 	"<leader>sM",
+		-- 	function()
+		-- 		Snacks.picker.man()
+		-- 	end,
+		-- 	desc = "Man Pages",
+		-- },
+		-- {
+		-- 	"<c-_>",
+		-- 	function()
+		-- 		Snacks.terminal()
+		-- 	end,
+		-- 	desc = "which_key_ignore",
+		-- },
+		-- {
+		-- 	"<c-/>",
+		-- 	function()
+		-- 		Snacks.terminal()
+		-- 	end,
+		-- 	desc = "Toggle Terminal",
+		-- },
+		-- {
+		-- 	"<leader>sp",
+		-- 	function()
+		-- 		Snacks.picker.lazy()
+		-- 	end,
+		-- 	desc = "Search for Plugin Spec",
+		-- },
+		-- {
+		-- 	"<leader>Z",
+		-- 	function()
+		-- 		Snacks.zen.zoom()
+		-- 	end,
+		-- 	desc = "Toggle Zoom",
+		-- },
+		-- {
+		-- 	"<leader>cR",
+		-- 	function()
+		-- 		Snacks.rename.rename_file()
+		-- 	end,
+		-- 	desc = "Rename File",
+		-- },
+		-- {
+		-- 	"<leader>sj",
+		-- 	function()
+		-- 		Snacks.picker.jumps()
+		-- 	end,
+		-- 	desc = "Jumps",
+		-- },
+		-- {
+		-- 	"<leader>sl",
+		-- 	function()
+		-- 		Snacks.picker.loclist()
+		-- 	end,
+		-- 	desc = "Location List",
+		-- },
+		-- {
+		-- 	'<leader>s"',
+		-- 	function()
+		-- 		Snacks.picker.registers()
+		-- 	end,
+		-- 	desc = "Registers",
+		-- },
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("User", {

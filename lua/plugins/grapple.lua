@@ -39,7 +39,7 @@ return {
 		-- { "<leader>H", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
 		-- { "<c-h>", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
 		{
-			"<c-h>",
+			"<leader>H",
 			function()
 				vim.cmd("Grapple tag")
 				Snacks.notify.info("Grapple: Added")

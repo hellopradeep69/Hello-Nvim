@@ -84,14 +84,14 @@ if vim.lsp.inlay_hint then
 end
 
 -- lazygit
-if vim.fn.executable("lazygit") == 1 then
-  map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
-  map("n", "<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
-  map("n", "<leader>gl", function() Snacks.picker.git_log() end, { desc = "Git Log (cwd)" })
-end
-
-map("n", "<leader>gb", function() Snacks.picker.git_log_line() end, { desc = "Git Blame Line" })
-map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse (open)" })
+-- if vim.fn.executable("lazygit") == 1 then
+--   map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
+--   map("n", "<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
+--   map("n", "<leader>gl", function() Snacks.picker.git_log() end, { desc = "Git Log (cwd)" })
+-- end
+--
+-- map("n", "<leader>gb", function() Snacks.picker.git_log_line() end, { desc = "Git Blame Line" })
+-- map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse (open)" })
 map({"n", "x" }, "<leader>gY", function()
     Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
 end, { desc = "Git Browse (copy)" })
@@ -155,7 +155,7 @@ vim.keymap.set("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
 vim.keymap.set("n", "<leader>k", ":Screenkey toggle<CR>", { desc = "KEY show" })
 
-vim.keymap.set("n", "<leader>a", ":Lazy reload grapple.nvim<CR>", opts)
+-- vim.keymap.set("n", "<leader>a", ":Lazy reload grapple.nvim<CR>", opts)
 
 vim.keymap.set("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", {desc = "Debug", silent = true})
 
