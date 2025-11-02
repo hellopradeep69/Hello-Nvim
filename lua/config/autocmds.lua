@@ -132,7 +132,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "sh",
+	pattern = "*",
 	callback = function()
 		vim.api.nvim_create_user_command("X", function()
 			vim.cmd("!chmod +x %")

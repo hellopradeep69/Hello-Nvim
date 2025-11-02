@@ -137,6 +137,10 @@ map("n", "x", '"_x', opts)
 map("v", "d", '"_d', opts)
 map("v", "x", '"_x', opts)
 
+-- better up and down
+map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", opts)
+
 -- open menu 
 -- map("n", "<leader>m", ":Dashboard<CR>", {desc = "Open Menu"})
 
