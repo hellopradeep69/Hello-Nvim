@@ -1,0 +1,3 @@
+return {
+	dir = "~/Train.nvim",
+}

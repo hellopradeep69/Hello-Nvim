@@ -1,6 +1,7 @@
 -- OPTIONS CONFIGURATION FOR
 vim = vim
 -- GENERAL SETTINGS
+
 vim.opt.number = true -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.ruler = true -- Show the cursor position all the time
@@ -78,3 +79,6 @@ vim.opt.listchars = {
 	precedes = "<", -- when text precedes screen
 	eol = " ", -- end-of-line symbol
 }
+
+-- will it work | undo tree
+-- vim.g.undotree_WindowLayout = 2

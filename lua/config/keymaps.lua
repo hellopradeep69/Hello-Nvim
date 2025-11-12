@@ -151,17 +151,22 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 map("n", "<ESC>", ":nohlsearch<CR>", {desc = "clear search highlight"})
 
+vim.keymap.set("i", "<C-a>", "<ESC>A", {})
+
 -- Normal mode: <leader>sr opens :%s/
 vim.keymap.set("n", "<leader>r", ":%s/", { desc = "Search and Replace" })
 vim.keymap.set("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
+vim.keymap.set("n", "<leader>k", require("treesj").toggle, { desc = "Open bracket" })
+
 -- vim.api.nvim_set_keymap("n", "<leader>m", ":lua ToggleGrappleStyle()<CR>", { desc = "GRAPPLE STYLE " })
 
-vim.keymap.set("n", "<leader>k", ":Screenkey toggle<CR>", { desc = "KEY show" })
+-- vim.keymap.set("n", "<leader>k", ":Screenkey toggle<CR>", { desc = "KEY show" })
 
 -- vim.keymap.set("n", "<leader>a", ":Lazy reload grapple.nvim<CR>", opts)
 
-vim.keymap.set("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", {desc = "Debug", silent = true})
+vim.keymap.set("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", {desc = "Run", silent = true})
+-- vim.keymap.set("n", "<leader>R", "<CMD>Train<CR>", {desc = "Debug", silent = true})
 
 -- vim.keymap.set("n", "<leader>sl", function ()
 -- vim.cmd("AutoSession search")

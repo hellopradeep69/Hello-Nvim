@@ -50,7 +50,7 @@ return {
 		{ "<leader>h", "<cmd>Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
 
 		{ "<leader>j", "<cmd>Grapple cycle_scopes next<cr>", desc = "cycle scopes" },
-		{ "<c-j>", "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
-		{ "<c-k>", "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
+		-- { "<c-j>", "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
+		-- { "<c-k>", "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
 	},
 }
